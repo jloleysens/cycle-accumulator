@@ -1,0 +1,28 @@
+{
+  "name": "cycle-incrementer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@cycle/dom": "^20.1.0",
+    "@cycle/run": "^4.0.0",
+    "@cycle/xstream-run": "^4.2.0",
+    "xstream": "^11.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "eslint": "^4.12.0",
+    "live-server": "^1.2.0",
+    "uglify-js": "^3.2.0"
+  },
+  "scripts": {
+    "build-debug": "browserify src/app.js -o js/app.js -t babelify",
+    "serve": "live-server ./",
+    "uglify": "uglifyjs js/app.js -o js/app.min.js",
+    "build": "yarn build-debug && yarn uglify"
+  }
+}
