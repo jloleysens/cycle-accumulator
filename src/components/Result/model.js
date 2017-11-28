@@ -27,7 +27,7 @@ function model(action$) {
 
   return reducer$.fold((acc, reducer) => {
     console.log(acc);
-    return Object.assign(reducer(acc));
+    return Object.assign(acc, reducer(acc));
   }, {val: 0});
 }
 
